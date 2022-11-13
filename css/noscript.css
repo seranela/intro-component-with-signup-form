@@ -1,0 +1,8 @@
+input:invalid {
+  outline: 1px solid var(--color-primary-red-alt);
+  color: var(--color-primary-red-alt);
+}
+
+input:invalid ~ .warning-message {
+  display: block;
+}

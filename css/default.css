@@ -1,0 +1,201 @@
+:root {
+  --color-primary-red: hsl(0, 100%, 74%);
+  --color-primary-red-alt: hsl(0, 53%, 54%); /* WCAG-AA Corrected */
+  --color-primary-green: hsl(154, 59%, 51%);
+  --color-primary-green-alt: hsl(154, 59%, 33%); /* WCAG-AA Corrected */
+  --color-accent-blue: hsl(248, 32%, 49%);
+  --color-neutral-dark-blue: hsl(249, 10%, 26%);
+  --color-neutral-gray-blue: hsl(246, 25%, 77%);
+  --font-family: 'Poppins', sans-serif;
+}
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font: 500 1rem var(--font-family);
+  background:
+    url(../images/bg-intro-mobile.png) left top / 60% repeat,
+    var(--color-primary-red-alt);
+  color: white;
+  margin: 0;
+  padding: 2rem;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 70rem;
+}
+
+/* Content body */
+
+.content-body > h1,
+.content-body > p {
+  text-align: center;
+}
+
+.content-body > h1 {
+  font-size: 1.8rem;
+  line-height: 1.2;
+}
+
+.content-body > p {
+  margin-top: 0;
+  margin-bottom: 3.5em;
+}
+
+/* Try trial message */
+
+.try-trial {
+  background-color: var(--color-accent-blue);
+  color: white;
+  border-radius: 10px;
+  width: 100%;
+  padding: 1.5em 3em;
+  text-align: center;
+  box-shadow: 0 8px 0 hsla(0, 0%, 0%, 0.15);
+}
+
+/* Form elements */
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: white;
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 8px 0 hsla(0, 0%, 0%, 0.15);
+}
+
+input {
+  font: inherit;
+  border: 1px solid var(--color-neutral-gray-blue);
+  border-radius: 6px;
+  padding: 1em;
+  width: 100%;
+}
+
+input::placeholder {
+  font-weight: 600;
+}
+
+input:focus {
+  outline: 2px solid var(--color-neutral-dark-blue);
+}
+
+.input-invalid {
+  outline: 1px solid var(--color-primary-red-alt);
+  color: var(--color-primary-red-alt);
+}
+
+.input-invalid ~ .warning-message {
+  display: block;
+}
+
+button {
+  font: inherit;
+  border: none;
+  padding: 1.5em;
+  cursor: pointer;
+}
+
+button {
+  background-color: var(--color-primary-green-alt);
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 6px;
+  border-bottom: 5px solid hsla(0, 0%, 0%, 0.2);
+  padding: 1em;
+}
+
+button:hover {
+  filter: brightness(115%);
+}
+
+.warning-message {
+  margin: 0;
+  color: var(--color-primary-red-alt);
+  font-size: 0.9em;
+  text-align: right;
+  display: none;
+}
+
+form p {
+  color: var(--color-neutral-dark-blue);
+  text-align: center;
+  margin: 0;
+}
+
+form p small {
+  font-size: 0.8em;
+}
+
+form a {
+  color: var(--color-primary-red-alt);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+form a:hover {
+  text-decoration: underline;
+}
+
+/* Screen readers */
+
+.sr-only {
+  border: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  -webkit-clip-path: inset(50%) !important;
+  clip-path: inset(50%) !important;
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+  white-space: nowrap !important;
+}
+
+/* Responsive media queries */
+
+@media (min-width: 768px) {
+  body {
+    height: 100vh;
+    background:
+      url(../images/bg-intro-desktop.png) left top / 130% repeat,
+      var(--color-primary-red-alt);
+  }
+  main {
+    flex-direction: row;
+    gap: 3rem;
+  }
+  .content-body {
+    flex: 1;
+  }
+  .content-form {
+    flex: 1;
+  }
+  .content-body > h1 {
+    font-size: 3.2rem;
+    text-align: left;
+  }
+  .content-body > p {
+    text-align: left;
+  }
+  input {
+    padding: 1em 2em;
+  }
+}
